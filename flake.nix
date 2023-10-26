@@ -34,6 +34,13 @@
             pytest
             nose
           ];
+        nikuman-gacha = with pkgs;
+          stdenv.mkDerivation {
+            name = "nikuman";
+            propagatedBuildInputs = [(python3.withPackages pyPkgs)];
+            dontUnpack = true;
+            installPhase = "install -Dm755 ${./main.py} $out/bin/nikuman";
+          };
       in {
         devshells.default = {
           packages = with pkgs; [config.treefmt.build.wrapper (python3.withPackages pyPkgs) nodePackages_latest.pyright];
@@ -44,6 +51,7 @@
           flakeFormatter = true;
           projectRootFile = "flake.nix";
         };
+        packages.default = nikuman-gacha;
       };
     };
 }
