@@ -27,12 +27,13 @@
       }: let
         pyPkgs = pythonPackages:
           with pythonPackages; [
-            discordpy
             black
             pyflakes
             isort
             pytest
             nose
+            # Dependencies ⇓⇓⇓⇓⇓
+            discordpy
           ];
         nikuman-gacha = with pkgs;
           stdenv.mkDerivation {
