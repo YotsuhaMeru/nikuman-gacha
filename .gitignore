@@ -131,3 +131,7 @@ dist
 
 images/
 config.json
+
+# nix
+.direnv/
+result
