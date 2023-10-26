@@ -1,0 +1,35 @@
+# EditorConfig configuration for nixpkgs
+# https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file, utf-8 charset
+[*]
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+# Match json/lockfiles/markdown/nix/python/ files, set indent to spaces
+[*.{json,lock,md,nix,py}]
+indent_style = space
+
+# Match json/lockfiles/markdown/nix files, set indent width of two
+[*.{json,lock,md,nix}]
+indent_size = 2
+
+# Match py files, set indent width of four
+[*.{py}]
+indent_size = 4
+
+[*.lock]
+indent_size = unset
+
+# Although Markdown/CommonMark allows using two trailing spaces to denote
+# a hard line break, we do not use that feature in nixpkgs since
+# it forces the surrounding paragraph to become a <literallayout> which
+# does not wrap reasonably.
+# Instead of a hard line break, start a new paragraph by inserting a blank line.
+[*.md]
+trim_trailing_whitespace = true
