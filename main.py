@@ -49,7 +49,7 @@ async def ping(ctx: Interaction):
         "https://t4.ftcdn.net/jpg/05/09/28/07/240_F_509280783_mqwF9xAQpLrtVDvXdzgzuVlbbqVn3wF8.jpg",
         "https://t4.ftcdn.net/jpg/04/81/49/01/240_F_481490193_fKCLbCA1giw6CowcpM4iPeWlXQzNDDH7.jpg",
     ]
-    embed = discord.Embed(title="肉まんガチャ", color=0xFF0000)
+    embed = discord.Embed(title="肉まんガチャ 🥟", color=0xFF0000)
     embed.set_image(url=random.choice(items))
     await ctx.response.send_message(embed=embed)
 
